@@ -1,0 +1,17 @@
+[
+	{
+		#conditions : [ ],
+		#ts : 3769762818,
+		#comment : '',
+		#formatVersion : '1.1',
+		#applications : OrderedCollection [
+			{
+				#name : 'RjsTemperatureSensorGbsExampleApp',
+				#versionName : '1.2',
+				#ts : 3734016360
+			}
+		],
+		#name : 'GemStoneGBSExamples',
+		#versionName : '1.0'
+	}
+]
