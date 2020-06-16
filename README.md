@@ -43,7 +43,7 @@ Or you can load the Configuration Map `GemStoneGBSExamples` from the context men
 
 ## Setting up GBS
 
-1. Install GemStone GBS for VA Smalltalk following the Installation Guide from [here](https://gemtalksystems.com/products/gbs-va/). As a result, you should have the map `GBSGemBuilder` and `GBSGemBuilder Development` loaded and a `libgcirpc-xxx` shared library findable by VA Smalltalk.
+1. Install GemStone GBS for VA Smalltalk following the Installation Guide from [here](https://gemtalksystems.com/products/gbs-va/). As a result, you should have the map `GBSGemBuilder` loaded and a `libgcirpc-xxx` shared library findable by VA Smalltalk.
 2. Set the library path. For example:
 ```Smalltalk
 GbsConfiguration current libraryName: 'z:\Common\Development\VAST\9.2x86-b427\libgcirpc-3.4.3-32.dll
@@ -52,7 +52,8 @@ GbsConfiguration current libraryName: 'z:\Common\Development\VAST\9.2x86-b427\li
 ```bash
 createStone -f -G gs_343_gbs 3.4.3
 ```
-Note that the `-G` is because tODE cannot easily coexist with GDB.
+Note that the `-G` is because tODE cannot easily coexist with GBS.
+
 4. Create the GemStone session parameters. Example for a local stone:
 ```Smalltalk
 GBSM addParameters: (GbsSessionParameters new
@@ -70,7 +71,7 @@ GBSM addParameters: (GbsSessionParameters new
 		username: 'DataCurator';
 		password: 'swordfish';
 		rememberPassword: true;
-		gemService: '!tcp@157.230.4.236#netldi:50377#task!gemnetobject';
+		gemService: '!@157.230.4.236#netldi:50377#task!gemnetobject';
 		yourself).
 ```
 5. From the `Transcript` main menu `GemStone` -> `Sessions` you should see the registered session parameter and you should also be able to `Login RPC`. Example:
@@ -85,7 +86,7 @@ GBSM addParameters: (GbsSessionParameters new
 
 <img alt="createInGemStone" src="assets/screenshots/createInGemStone.png">
 
-3. Now that the also exists on GemStone, here is the final magic:
+3. Now that the class also exists on GemStone, here is the final magic:
 
 ```Smalltalk
 "GemStone Set Up:
@@ -139,7 +140,7 @@ The results, as you expect, are that both Smalltalks have their `Readings` varia
 
 You can see the 3 measures, at what time they were recorded and what temperature that was (in Celsius).
 
-Note that each report string where generated in different Smalltalks and how the collection was in sync automatically. It’s funny to see that VA Smalltalk prints dates as MM/DD/YYYY while GemStone does DD/MM/YYYY.
+Note that each report string was generated in two different Smalltalks and how the collection was in sync automatically. It’s funny to see that VA Smalltalk prints dates as MM/DD/YYYY while GemStone does DD/MM/YYYY.
 
 ## Blog posts and other media
 
